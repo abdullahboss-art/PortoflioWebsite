@@ -1,0 +1,21 @@
+:root {
+  --bg: #050d17;
+  --accent: #00d0ee;
+  --text: #ffffff;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Roboto", system-ui, sans-serif;
+}

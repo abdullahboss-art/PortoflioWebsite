@@ -1,0 +1,79 @@
+.float {
+  position: fixed;
+  bottom: 28px;
+  z-index: 200;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.25s ease;
+}
+
+.float:hover {
+  transform: translateY(-3px);
+}
+
+/* WhatsApp: left side (background transparent, image apna design lati hai) */
+.float--wa {
+  left: 24px;
+  background: transparent;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+  animation: float-pulse 2.2s infinite;
+}
+
+.float--wa:hover {
+  box-shadow: 0 8px 26px rgba(37, 211, 102, 0.65);
+}
+
+.float__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Back to top: right side */
+.float--top {
+  right: 24px;
+  background: #00d0ee;
+  color: #03121c;
+  box-shadow: 0 6px 20px rgba(0, 208, 238, 0.35);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+}
+
+.float--top.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.float--top.is-visible:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 26px rgba(0, 208, 238, 0.6);
+}
+
+@keyframes float-pulse {
+  0% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0.5); }
+  70% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4), 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4), 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+@media (max-width: 520px) {
+  .float {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+  }
+  .float--wa { left: 16px; }
+  .float--top { right: 16px; }
+}
+.floating {
+  outline: 4px solid black !important;
+}

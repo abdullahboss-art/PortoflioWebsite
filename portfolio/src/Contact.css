@@ -1,0 +1,72 @@
+.contact {
+  --bg: #050d17;
+  --accent: #00d0ee;
+  --danger: #ff6b7a;
+  background: var(--bg);
+  color: #fff;
+  font-family: "Roboto", system-ui, sans-serif;
+  border-top: 1px solid rgba(0, 208, 238, 0.12);
+}
+.contact__inner { max-width: 1200px; margin: 0 auto; padding: 72px 24px; display: grid; grid-template-columns: 1.1fr 1fr; align-items: start; gap: 48px; }
+.contact__eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-size: 12px; font-weight: 500; letter-spacing: 2px; color: var(--accent); }
+.contact__line { width: 28px; height: 2px; border-radius: 2px; background: var(--accent); }
+.contact__title { margin: 0 0 14px; font-size: clamp(28px, 4vw, 40px); font-weight: 700; line-height: 1.15; }
+.contact__accent { color: var(--accent); }
+.contact__sub { max-width: 420px; margin: 0 0 32px; font-size: 15px; line-height: 1.6; color: #c9d8e2; }
+
+.contact__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 28px; margin: 0; padding: 0; list-style: none; }
+.contact__list li { display: flex; align-items: center; gap: 12px; font-size: 13px; min-width: 0; }
+.contact__list a, .contact__list span { color: #fff; text-decoration: none; word-break: break-all; }
+.contact__list a:hover { color: var(--accent); }
+.contact__icon { flex-shrink: 0; color: var(--accent); }
+
+/* ---------- Form ---------- */
+.contact__form { display: flex; flex-direction: column; gap: 14px; padding: 20px; border-radius: 14px; border: 1px solid rgba(0, 208, 238, 0.16); background: rgba(10, 24, 38, 0.6); }
+.contact__group { display: flex; flex-direction: column; gap: 6px; }
+.contact__field { position: relative; display: block; }
+.contact__field svg { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--accent); pointer-events: none; }
+.contact__field--area svg { top: 16px; transform: none; }
+.contact__field input, .contact__field textarea { width: 100%; padding: 12px 12px 12px 38px; border-radius: 8px; border: 1px solid rgba(0, 208, 238, 0.2); background: rgba(5, 13, 23, 0.8); color: #fff; font: inherit; font-size: 13px; outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+.contact__field textarea { resize: vertical; min-height: 110px; }
+.contact__field input::placeholder, .contact__field textarea::placeholder { color: #7f9aab; }
+.contact__field input:focus, .contact__field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0, 208, 238, 0.15); }
+
+/* Validation */
+.contact__field.has-error input, .contact__field.has-error textarea { border-color: var(--danger); }
+.contact__field.has-error input:focus, .contact__field.has-error textarea:focus { box-shadow: 0 0 0 3px rgba(255, 107, 122, 0.18); }
+.contact__field.has-error svg { color: var(--danger); }
+.contact__error { margin: 0; font-size: 12px; line-height: 1.4; color: var(--danger); animation: contact-in 0.2s ease; }
+.contact__meta { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.contact__count { margin-left: auto; font-size: 11px; color: #7f9aab; }
+
+/* Spam trap, screen par kabhi nahi dikhta */
+.contact__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+
+/* Button */
+.contact__btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px; border: 0; border-radius: 10px; background: var(--accent); color: #03121c; font: inherit; font-size: 15px; font-weight: 500; cursor: pointer; transition: box-shadow 0.2s, opacity 0.2s; }
+.contact__btn:hover:not(:disabled) { box-shadow: 0 0 22px rgba(0, 208, 238, 0.5); }
+.contact__btn:disabled { opacity: 0.7; cursor: not-allowed; }
+.contact__spinner { width: 16px; height: 16px; border-radius: 50%; border: 2px solid rgba(3, 18, 28, 0.3); border-top-color: #03121c; animation: contact-spin 0.7s linear infinite; }
+
+/* Thank you / error message (form ke niche) */
+.contact__notice { display: flex; align-items: flex-start; gap: 14px; padding: 16px 18px; border-radius: 12px; animation: contact-in 0.35s ease; }
+.contact__notice strong { display: block; margin-bottom: 4px; font-size: 15px; }
+.contact__notice p { margin: 0; font-size: 13px; line-height: 1.55; color: #c9d8e2; }
+.contact__notice a { color: var(--accent); }
+.contact__notice-icon { flex-shrink: 0; margin-top: 2px; }
+.contact__notice--ok { border: 1px solid rgba(0, 208, 238, 0.5); background: linear-gradient(135deg, rgba(0, 208, 238, 0.16), rgba(0, 208, 238, 0.04)); box-shadow: 0 0 24px rgba(0, 208, 238, 0.15); }
+.contact__notice--ok .contact__notice-icon { color: var(--accent); animation: contact-pop 0.45s ease; }
+.contact__notice--bad { border: 1px solid rgba(255, 107, 122, 0.5); background: rgba(255, 107, 122, 0.08); }
+.contact__notice--bad .contact__notice-icon { color: var(--danger); }
+
+@keyframes contact-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes contact-pop { 0% { transform: scale(0.4); opacity: 0; } 70% { transform: scale(1.15); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes contact-spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 860px) {
+  .contact__inner { grid-template-columns: 1fr; padding: 56px 20px; gap: 36px; }
+}
+@media (max-width: 520px) { .contact__list { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) {
+  .contact__error, .contact__notice, .contact__notice-icon, .contact__spinner { animation: none; }
+}
