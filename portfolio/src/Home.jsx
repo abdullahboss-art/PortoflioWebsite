@@ -5,7 +5,7 @@ import aboutLaptop from "./assets/About.jpg";
 import cv from "./assets/Abdullah_Musharraf.pdf";
 import quickbite from "./assets/quickbite.jpg";
 import hotel from "./assets/HotelManagement.jpg";
-import atm from "./assets/Alrman-Advertising.png";
+import alrman from "./assets/Alrman-Advertising.png";
 
 import html from "./assets/Html.png";
 import css from "./assets/css.png";
@@ -23,12 +23,18 @@ import github from "./assets/github.png";
 import hotelVideo from "./assets/Demo Video.mp4";
 import Alrman from "./assets/AlrmanAdvertising.mp4";
 import OnlineFoodApp from "./assets/OnlineFood.mp4";
+import Sustinability from "./assets/Sustinablity.mp4";
 
 const IMAGES = {
   logo,
   profile,
   about: aboutLaptop,
-  projects: { quickbite, hotel, atm },
+  projects: {
+    quickbite,
+    hotel,
+    alrman: alrman,
+    sustimability: Sustinability,
+  },
   skills: { html, css, js, react, next, tailwind, node, mongo, express, firebase, python, git, github },
 };
 
@@ -47,6 +53,7 @@ const VIDEOS = {
   quickbite: OnlineFoodApp,
   hotel: hotelVideo,
   alrman: Alrman,
+  sustimability: Sustinability,
 };
 
 // Social links — apne asli links yahan daalo
@@ -99,11 +106,19 @@ const PROJECTS = [
   },
   {
     title: "Alrman Advertising",
-    img: IMAGES.projects.atm,
+    img: IMAGES.projects.alrman,
     tags: ["Flutter", "Firebase", "JSON"],
     desc: "Official website and app for Alrman Advertising with services, portfolio and contact features.",
-    live: WEBSITE,
+    live: "https://alrmanapp.netlify.app",
     video: VIDEOS.alrman,
+  },
+  {
+    title: "Sustimability – Environmental Awareness App",
+    img: IMAGES.projects.sustimability,
+    tags: ["Flutter", "Firebase", "JSON"],
+    desc: "An app to raise awareness about environmental issues and promote sustainable practices.",
+    // live: WEBSITE,
+    video: VIDEOS.sustimability,
   },
 ];
 
