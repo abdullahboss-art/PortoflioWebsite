@@ -1,3 +1,9 @@
+
+
+*{
+  margin: 0;
+}
+
 :root {
   --bg: #050d17;
   --accent: #00d0ee;
