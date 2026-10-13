@@ -9,7 +9,7 @@ import alrman from "./assets/Alrman-Advertising.png";
 
 import html from "./assets/Html.png";
 import css from "./assets/css.png";
-import js from "./assets/javascript.png";
+import js from "./assets/Javascript.png";
 import react from "./assets/react.png";
 import next from "./assets/nextjs.png";
 import tailwind from "./assets/tailwind.png";
